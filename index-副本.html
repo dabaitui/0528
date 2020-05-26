@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/wow.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body id="top">
+    <menu>
+        <img src="images/logo.png" alt="">
+        <ul>
+            <a href="">
+                <li class="active">首页</li>
+            </a>
+            <a href="">
+                <li>关于智为</li>
+            </a>
+            <a href="">
+                <li>代表作品</li>
+            </a>
+            <a href="">
+                <li>幕后花絮</li>
+            </a>
+            <a href="">
+                <li>服务客户</li>
+            </a>
+            <a href="">
+                <li>加入我们</li>
+            </a>
+            <a href="">
+                <li>联系我们</li>
+            </a>
+        </ul>
+        <div class="open">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </menu>
+    <a href="#top" class="to_top">
+        <img src="images/3.png" alt="">
+    </a>
+    <div class="ban_video">
+        <img src="images/1.png" alt="">
+        <video src="" width="100%" poster="./images/1.jpg" muted autoplay loop>
+
+        </video>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row fo_top">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-11 col-md-offset-1">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="images/logo.png" width="100%" alt="">
+                                </div>
+                            </div>
+                            <div class="row fo_l">
+                                <div class="col-md-4">
+                                    <img src="images/qr_code.jpg" width="100%" alt="">
+                                    <p>扫码关注智为传奇</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <ul>
+                                        <li>地址：沈阳市浑南区三义街瑞宝东方大厦1903室</li>
+                                        <li>联系人：陆浩然</li>
+                                        <li>电话：024-23923355</li>
+                                        <li>传真：024-23923399</li>
+                                        <li>邮箱：xukai@sydaxiong.com</li>
+                                        <li>传真：024-23923399</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="fo_r">
+                                <ul>
+                                    <li><a>关于我们</a></li>
+                                    <li><a>公司简介</a></li>
+                                    <li><a>企业文化</a></li>
+                                    <li><a>发展历程</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a>代表作品</a></li>
+                                    <li><a>城市及服务</a></li>
+                                    <li><a>企业及产品</a></li>
+                                    <li><a>其他</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a>幕后花絮</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a>服务客户</a></li>
+                                    <li><a>政府客户</a></li>
+                                    <li><a>企业客户</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a>加入我们</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a>联系我们</a></li>
+                                </ul>
+                            </div>
+                            <div class="map">
+                                <div style="width:100%;height:100%;border:#ccc solid 1px;" id="dituContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container end">
+                Copyright @2019 沈阳智为传奇广告有限公司 辽ICP备 14036002号 <a>沈阳网站建设</a>：沈阳大熊科技
+            </div>
+        </div>
+    </footer>
+    <footer2>
+        <a href="">立即咨询</a>
+    </footer2>
+</body>
+<script>
+    $(function () {
+        if ($('.wow').length) {
+            var wow = new WOW({
+                boxClass: 'wow', // animated element css class (default is wow)
+                animateClass: 'animated', // animation css class (default is animated)
+                offset: 0, // distance to the element when triggering the animation (default is 0)
+                mobile: true, // trigger animations on mobile devices (default is true)
+                live: true // act on asynchronously loaded content (default is true)
+            });
+            wow.init();
+        }
+    })
+</script>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap() {
+        createMap(); //创建地图
+        setMapEvent(); //设置地图事件
+        addMapControl(); //向地图添加控件
+        addMarker(); //向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap() {
+        var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+        var point = new BMap.Point(123.458816, 41.747182); //定义一个中心点坐标
+        map.centerAndZoom(point, 17); //设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map; //将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent() {
+        map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+        map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard(); //启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl() {
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE
+        });
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            isOpen: 1
+        });
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_BOTTOM_LEFT
+        });
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{
+        title: "地址：沈阳市浑南区三义街瑞宝东方大厦1903室",
+        content: "联系人：陆浩然<br/>电话：024-23923355<br/>邮箱：xukai@sydaxig.com",
+        point: "123.458807|41.747128",
+        isOpen: 0,
+        icon: {
+            w: 21,
+            h: 21,
+            l: 0,
+            t: 0,
+            x: 6,
+            lb: 5
+        }
+    }];
+    //创建marker
+    function addMarker() {
+        for (var i = 0; i < markerArr.length; i++) {
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0, p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point, {
+                icon: iconImg
+            });
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title, {
+                "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+            });
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor: "#808080",
+                color: "#333",
+                cursor: "pointer"
+            });
+
+            (function () {
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click", function () {
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open", function () {
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close", function () {
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click", function () {
+                    _marker.openInfoWindow(_iw);
+                })
+                if (!!json.isOpen) {
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i) {
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
+            "</b><div class='iw_poi_content'>" + json.content + "</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json) {
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+            imageOffset: new BMap.Size(-json.l, -json.t),
+            infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+            offset: new BMap.Size(json.x, json.h)
+        })
+        return icon;
+    }
+
+    initMap(); //创建和初始化地图
+</script>
+<script>
+    $('.to_top').click(function () {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 800);
+        return false;
+    });
+    $(".video_main span").click(function () {
+        $(".mb").toggleClass("active")
+        $(".video_play").toggleClass("active")
+        var a = $(this).find(".v_1").attr("src")
+        var b = $(this).find("p").html()
+        $(".video_play").find("video").attr("poster", a)
+        $(".video_play").find("h5").html(b)
+        $(".video_play").find(".active div p").html(b)
+        $(".video_play").find(".active .v_1").attr("src", a)
+    })
+    $(".mb").click(function () {
+        $(".mb").toggleClass("active")
+        $(".video_play").toggleClass("active")
+    })
+    $(".close1").click(function () {
+        $(".mb").toggleClass("active")
+        $(".video_play").toggleClass("active")
+    })
+    $(".slide").click(function () {
+        var a = $(this).find(".v_1").attr("src")
+        var b = $(this).find("p").html()
+        // $(this).parents(".col-md-3").siblings().find(".active").addClass("normal")
+        $(this).parents(".col-md-3").siblings().find(".active").removeClass("active")
+        $(this).addClass("active")
+        $(this).parents(".row2").siblings("h5").html(b)
+        $(this).parents(".row2").siblings("video").attr("poster", a)
+    })
+
+    $(".open").click(function () {
+        $("menu ul").toggleClass("active")
+        $(this).toggleClass("active")
+    })
+</script>
+
+</html>

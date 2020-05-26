@@ -1,0 +1,247 @@
+*,
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea {
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus,
+li,
+.close {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	background: none;
+	outline: none;
+	text-decoration: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none
+}
+
+/*手机站头部样式	*/
+.header_wap {
+	height: 50px;
+	width: 100%;
+	position: relative;
+	z-index: 999;
+	background: none;
+	top: 0;
+}
+
+.header_wap .logo {
+	width: auto;
+	height: 15px;
+	float: left;
+	margin: 15px 0;
+}
+
+.header_wap .logo img {
+	width: auto;
+	height: 100%;
+}
+
+.header_wap .menu {
+	width: 35px;
+	position: absolute;
+	top: 3px;
+	right: 15px;
+}
+
+.header_wap .ion-ios-navicon {
+	height: 2px;
+	width: 30px;
+	background: #222;
+	position: relative;
+	left: 0px;
+	top: 17px;
+	cursor: pointer;
+	display: inline-block
+}
+
+.header_wap .ion-ios-navicon:after,
+.header_wap .ion-ios-navicon:before {
+	content: '';
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	background: inherit
+}
+
+.header_wap .ion-ios-navicon:before {
+	left: 0;
+	bottom: 16px
+}
+
+.header_wap .ion-ios-navicon:after {
+	left: 0;
+	bottom: 8px
+}
+
+#menu #lg {
+	width: 100%;
+	float: left;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	text-align: right;
+}
+
+#menu #lg a {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 25px;
+	text-align: center;
+	background: #bf613f;
+	margin-left: 4px;
+}
+
+#menu #lg a:last-child {
+	background: #bb3239;
+}
+
+/*底部样式*/
+.footer {
+	background: #8b7a60;
+	color: #fff;
+	line-height: 28px;
+}
+
+.sub_contact {
+	padding: 35px 0;
+}
+
+.foot_r {
+	border-left: 1px #aea290 solid;
+	padding: 35px 0 20px;
+}
+
+.foot_r dl {
+	width: 14.2%;
+	float: right;
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.foot_r dl dt {
+	font-size: 15px;
+	margin-bottom: 10px;
+	line-height: 28px;
+}
+
+.foot_r dl dd {
+	line-height: 28px;
+}
+
+.footer a {
+	color: #fff;
+}
+
+.footer a:hover {
+	opacity: 0.8
+}
+
+.copy {
+	min-height: 60px;
+	padding-top: 15px;
+	padding-right: 70px;
+	color: #bcb3a7;
+	text-align: right;
+	background: url(../images/sub_logo.jpg) no-repeat right center;
+}
+
+@media (max-width: 768px) {
+	.sub_contact {
+		float: left;
+		border-bottom: 1px #aea290 solid;
+	}
+
+	.sub_contact ul {
+		width: 70%;
+		float: left;
+	}
+
+	.sub_contact span {
+		float: right;
+	}
+
+	.foot_r {
+		border-left: none;
+		padding: 20px 0 20px;
+	}
+
+	.copy {
+		padding-top: 0;
+		padding-bottom: 60px;
+		text-align: left;
+		background-position: top right;
+	}
+}
+
+.foo2 {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	line-height: 22px;
+	color: #fff;
+	text-align: center;
+	background-size: cover;
+	z-index: 1000;
+	border-top: 1px #111 solid;
+}
+
+.foo2 li {
+	width: 33.3333%;
+	float: left;
+	padding: 10px 0;
+	background: #333;
+	border-right: 1px #111 solid;
+}
+
+.foo2 li:first-child {
+	background: #222;
+}
+
+.foo2 li:last-child {
+	border: none;
+}
+
+.foo2 li img {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.foo2 li a {
+	color: #fff;
+}
+
+.headerfixed {
+	position: fixed;
+	top: 0;
+	box-shadow: 0 0 10px #eee;
+	background-color: #fff;
+	z-index: 99999;
+}
